@@ -1,0 +1,38 @@
+/* Navbar styles for both desktop and mobile */
+.navbar {
+    background-color: #f8f9fa;
+}
+
+
+/* Styling for the mobile bottom navbar */
+.navbar.fixed-bottom .nav-link {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+/* Hides the top navbar on mobile */
+.navbar.d-lg-flex {
+    display: none !important;
+}
+
+/* Shows bottom navbar only on small screens */
+@media (max-width: 991px) {
+    .navbar.fixed-bottom {
+        display: flex;
+    }
+}
+
+/* For larger screens, show the top navbar */
+@media (min-width: 992px) {
+    .navbar.d-lg-flex {
+        display: flex !important;
+    }
+    .navbar.fixed-bottom {
+        display: none;
+    }
+}
+/* Apply Lato font globally */
+body {
+    font-family: 'Lato', sans-serif;
+}
