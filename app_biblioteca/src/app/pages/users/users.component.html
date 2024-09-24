@@ -1,1 +1,46 @@
-<p>users works!</p>
+<!-- Main Content -->
+<div class="container mt-5">
+    <!-- Title -->
+    <h2 class="mb-4">User List</h2>
+
+    <!-- Filters Section -->
+    <div class="filter-row mb-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <select class="form-select" [(ngModel)]="selectedUserType" (change)="filterUsers()" aria-label="Filter by User Type">
+                    <option value="all" selected>All Users</option>
+                    <option value="admin">Admins</option>
+                    <option value="member">Members</option>
+                </select>
+            </div>
+            <div class="col-md-6 text-end">
+                <button class="btn btn-primary" (click)="clearFilters()">Clear Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- User List -->
+    <div class="row" *ngFor="let user of filteredUsers">
+        <div class="col-12 mb-3">
+            <div class="user-card d-flex align-items-center justify-content-between p-3 border">
+                <div class="d-flex align-items-center">
+                    <img [src]="user.avatar" alt="User Avatar" class="me-3" style="width: 60px; height: 60px; border-radius: 50%;">
+                    <div class="user-info">
+                        <h6>{{ user.name }}</h6>
+                        <p><strong>Email:</strong> {{ user.email }}</p>
+                        <p><strong>Member since:</strong> {{ user.memberSince }}</p>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-warning me-2" (click)="editUser(user)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add New User Button -->
+    <div class="text-end mt-4">
+        <button class="btn btn-success" (click)="addUser()">Add New User</button>
+    </div>
+</div>
