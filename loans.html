@@ -3,48 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="loans.css">
-    <link rel="stylesheet" href="styles.css">
     <title>Loans</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts (Lato) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS (Unified version 5.3.0) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/loans.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body>
 
-    <!-- Navbar for Desktop -->
+<body>
+<!-- Mobile Navbar (Top) -->
+<nav class="navbar navbar-light bg-light fixed-top d-flex d-lg-none">
+    <div class="container-fluid justify-content-between align-items-center">
+        <!-- Back Arrow Placeholder -->
+        <a href="index.html" class="navbar-icon">
+            <img src="images/back-arrow.png" alt="Back" width="24" height="24">
+        </a>
+
+        <!-- Centered Logo -->
+        <a class="navbar-brand mx-auto" href="index.html">
+            <img src="images/logo.png" alt="Library" width="30" height="30" class="d-inline-block align-text-top">
+        </a>
+
+        <!-- Placeholder Avatar Icon -->
+        <a href="#" class="navbar-icon">
+            <img src="images/user-avatar.png" alt="Avatar" width="30" height="30" class="rounded-circle">
+        </a>
+    </div>
+</nav>
+
+<!-- Desktop Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-flex">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" alt="Library" width="30" height="30" class="d-inline-block align-text-top">
-
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-                <li></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="search.html">Search</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ratings.html">Ratings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loans.html">Loans</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+                <li class="nav-item"><a class="nav-link" href="ratings.html">Ratings</a></li>
+                <li class="nav-item"><a class="nav-link" href="loans.html">Loans</a></li>
             </ul>
             <ul class="navbar-nav ms-auto">
+                <!-- Profile Avatar for Desktop -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="images/profile.png" alt="User Avatar" width="30" height="30" class="rounded-circle">
+                        <img src="images/user-avatar.png" alt="User Avatar" width="30" height="30" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
                         <li><a class="dropdown-item" href="user-settings.html">User Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a class="dropdown-item" href="login.html">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -52,75 +70,112 @@
     </div>
 </nav>
 
-<!-- Navbar for Mobile (Bottom Navbar with Icons) -->
+<!-- Mobile Navbar (Bottom) -->
 <nav class="navbar navbar-light bg-light fixed-bottom d-flex d-lg-none">
     <div class="container-fluid justify-content-around">
-        <a class="nav-link text-center" href="index.html">
-            <i class="fas fa-home"></i><br>Home
-        </a>
-        <a class="nav-link text-center" href="search.html">
-            <i class="fas fa-search"></i><br>Search
-        </a>
-        <a class="nav-link text-center" href="ratings.html">
-            <i class="fas fa-star"></i><br>Ratings
-        </a>
-        <a class="nav-link text-center" href="loans.html">
-            <i class="fas fa-book"></i><br>Loans
-        </a>
-        <a class="nav-link text-center" href="user-settings.html">
-            <i class="fas fa-user-cog"></i><br>Settings
-        </a>
+        <a class="nav-link text-center" href="index.html"><i class="fas fa-home"></i><br></a>
+        <a class="nav-link text-center" href="search.html"><i class="fas fa-search"></i><br></a>
+        <a class="nav-link text-center" href="ratings.html"><i class="fas fa-star"></i><br></a>
+        <a class="nav-link text-center" href="loans.html"><i class="fas fa-book"></i><br></a>
+        <a class="nav-link text-center" href="user-settings.html"><i class="fas fa-user-cog"></i><br></a>
     </div>
 </nav>
 
-    <div class="container mx-2 mt-3">
-        <h1 class="oval">Loans</h1>
-    </div>    
+<!-- Main Content -->
+<div class="container mt-5">
+    <!-- Title -->
+    <h2 class="mb-4">Your Loan History</h2>
 
-    <div class="input-group my-3">
-            <input type="text" class="form-control" placeholder="Search">
-            <div class="input-group-append">
-                <span class="input-group-text"><i class="material-icons">search</i></span>
+    <!-- Filters Section -->
+    <div class="filter-row mb-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <select id="loanStatusFilter" class="form-select" aria-label="Filter by Status">
+                    <option value="all" selected>All Status</option>
+                    <option value="returned">Returned</option>
+                    <option value="overdue">Overdue</option>
+                    <option value="borrowed">Borrowed</option>
+                </select>
             </div>
+            <div class="col-md-6 text-end">
+                <button id="clearFiltersBtn" class="btn btn-primary">Clear Filters</button>
+            </div>
+        </div>
     </div>
 
-    <h5 class="mb-4 mx-3">Ongoing</h5>
-    <ul class="list-unstyled mt-3">
-        
-        <li class="loan-item d-flex align-items-center mt-3 mb-4 mx-5 custom">
-            <img src="images/a_game_of_thrones.jpeg" alt="A Game of Thrones" class="mr-3">
-            <div class="loan-details">
-                <h5>A Game of Thrones</h5>
-                <p>George R. R. Martin</p>
-                <p>Until 17.11.2023</p>
-            </div>
-        </li>
-
-        <li class="loan-item d-flex align-items-center mt-3 mb-4 mx-5 custom">
-                <img src="images/the_hobbit.jpeg" alt="The Hobbit" class="mr-3">
-                <div class="loan-details">
-                    <h5>The Hobbit</h5>
-                    <p>J.R.R Tolkien</p>
-                    <p>Until 8.11.2023</p>
+    <!-- Loan List -->
+    <div class="row" id="loanList">
+        <!-- Loan Card 1 (Borrowed) -->
+        <div class="col-12 mb-3 loan-card" data-status="borrowed">
+            <div class="d-flex align-items-center">
+                <div class="col-4 col-md-2">
+                    <div class="card book-card">
+                        <img src="images/hobbit.png" class="card-img-top img-fluid" alt="The Hobbit">
+                        <div class="card-body text-center">
+                            <h6 class="card-title">The Hobbit</h6>
+                        </div>
+                    </div>
                 </div>
-        </li>
-    </ul>
+                <div class="loan-info ms-3">
+                    <p><strong>Borrowed:</strong> 01/08/2024</p>
+                    <p><strong>Return By:</strong> 15/08/2024</p>
+                    <button class="btn btn-success">Return</button>
+                </div>
+            </div>
+        </div>
 
-    <button class="btn btn-light mt-2 mx-3">Loan history</button>
+        <!-- Loan Card 2 (Returned) -->
+        <div class="col-12 mb-3 loan-card" data-status="returned">
+            <div class="d-flex align-items-center">
+                <div class="col-4 col-md-2">
+                    <div class="card book-card">
+                        <img src="images/got.png" class="card-img-top img-fluid" alt="Game of Thrones">
+                        <div class="card-body text-center">
+                            <h6 class="card-title">Game of Thrones</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="loan-info ms-3">
+                    <p><strong>Borrowed:</strong> 05/07/2024</p>
+                    <p><strong>Return By:</strong> 20/07/2024</p>
+                    <button class="btn btn-secondary" disabled>Returned</button>
+                </div>
+            </div>
+        </div>
 
-    <div class="footer">
-        <a href="#"><span class="material-icons">home</span></a>
-        <a href="#"><span class="material-icons">search</span></a>
-        <a href="#"><span class="material-icons">star</span></a>
-        <a href="#"><span class="material-icons">shopping_cart</span></a>
-        <a href="#"><span class="material-icons">person</span></a>
+        <!-- Additional Loan Cards with different statuses (Overdue, Borrowed, Returned) can be added here -->
     </div>
+</div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- JavaScript -->
+<script>
+    document.getElementById('loanStatusFilter').addEventListener('change', function() {
+        const selectedStatus = this.value;
+        const loanCards = document.querySelectorAll('.loan-card');
+
+        loanCards.forEach(card => {
+            const loanStatus = card.getAttribute('data-status');
+            if (selectedStatus === 'all' || loanStatus === selectedStatus) {
+                card.style.display = 'block'; // Show card
+            } else {
+                card.style.display = 'none'; // Hide card
+            }
+        });
+    });
+
+    document.getElementById('clearFiltersBtn').addEventListener('click', function() {
+        document.getElementById('loanStatusFilter').value = 'all';
+        const loanCards = document.querySelectorAll('.loan-card');
+        loanCards.forEach(card => {
+            card.style.display = 'block'; // Show all cards
+        });
+    });
+</script>
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

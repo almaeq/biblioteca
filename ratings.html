@@ -3,48 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="ratings.css">
-    <link rel="stylesheet" href="styles.css">
     <title>Book Ratings</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts (Lato) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS (Version 5.3.0) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/ratings.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Material Icons (if still required) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
+<!-- Mobile Navbar (Top) -->
+<nav class="navbar navbar-light bg-light fixed-top d-flex d-lg-none">
+    <div class="container-fluid justify-content-between align-items-center">
+        <!-- Back Arrow Placeholder -->
+        <a href="index.html" class="navbar-icon">
+            <img src="images/back-arrow.png" alt="Back" width="24" height="24">
+        </a>
 
-    <!-- Navbar for Desktop -->
+        <!-- Centered Logo -->
+        <a class="navbar-brand mx-auto" href="index.html">
+            <img src="images/logo.png" alt="Library" width="30" height="30" class="d-inline-block align-text-top">
+        </a>
+
+        <!-- Placeholder Avatar Icon -->
+        <a href="#" class="navbar-icon">
+            <img src="images/user-avatar.png" alt="Avatar" width="30" height="30" class="rounded-circle">
+        </a>
+    </div>
+</nav>
+
+<!-- Desktop Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-flex">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" alt="Library" width="30" height="30" class="d-inline-block align-text-top">
-
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-                <li></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="search.html">Search</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ratings.html">Ratings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loans.html">Loans</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+                <li class="nav-item"><a class="nav-link" href="ratings.html">Ratings</a></li>
+                <li class="nav-item"><a class="nav-link" href="loans.html">Loans</a></li>
             </ul>
             <ul class="navbar-nav ms-auto">
+                <!-- Profile Avatar for Desktop -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="images/profile.png" alt="User Avatar" width="30" height="30" class="rounded-circle">
+                        <img src="images/user-avatar.png" alt="User Avatar" width="30" height="30" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
                         <li><a class="dropdown-item" href="user-settings.html">User Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a class="dropdown-item" href="login.html">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -52,92 +72,88 @@
     </div>
 </nav>
 
-<!-- Navbar for Mobile (Bottom Navbar with Icons) -->
+<!-- Mobile Navbar (Bottom) -->
 <nav class="navbar navbar-light bg-light fixed-bottom d-flex d-lg-none">
     <div class="container-fluid justify-content-around">
-        <a class="nav-link text-center" href="index.html">
-            <i class="fas fa-home"></i><br>Home
-        </a>
-        <a class="nav-link text-center" href="search.html">
-            <i class="fas fa-search"></i><br>Search
-        </a>
-        <a class="nav-link text-center" href="ratings.html">
-            <i class="fas fa-star"></i><br>Ratings
-        </a>
-        <a class="nav-link text-center" href="loans.html">
-            <i class="fas fa-book"></i><br>Loans
-        </a>
-        <a class="nav-link text-center" href="user-settings.html">
-            <i class="fas fa-user-cog"></i><br>Settings
-        </a>
+        <a class="nav-link text-center" href="index.html"><i class="fas fa-home"></i><br></a>
+        <a class="nav-link text-center" href="search.html"><i class="fas fa-search"></i><br></a>
+        <a class="nav-link text-center" href="ratings.html"><i class="fas fa-star"></i><br></a>
+        <a class="nav-link text-center" href="loans.html"><i class="fas fa-book"></i><br></a>
+        <a class="nav-link text-center" href="user-settings.html"><i class="fas fa-user-cog"></i><br></a>
     </div>
 </nav>
+<!-- Main Content -->
+<div class="container mt-5">
+    <!-- Title -->
+    <h2 class="mb-4">Your Ratings</h2>
 
-        <!-- Filter Bar -->
-        <div class="d-flex justify-content-center mb-3 mt-3">
-            <button class="btn btn-light active-btn mx-3 py-1 w-auto">My ratings</button>
-            <button class="btn btn-light mx-3 py-1 w-auto">Best Sellers 2024</button>
-            <button class="btn btn-light mx-3 py-1 w-auto">General</button>
-            <button class="btn btn-light mx-3 py-1 w-auto">FILTERS</button>
-        </div>
+    <!-- Rating List -->
 
-        <div class="container">
-            <div class="ratings-comments d-flex justify-content-between mt-2 mb-4">
-                <a href="ratings.html" class="btn custom-light mx-2"><u>Your ratings</u></a>
-                <a href="ratings_comments.html" class="btn custom-light mx-2">Your comments</a>
-        </div>
+    <div class="row" id="ratingList">
+        <!-- Rating Card 1 -->
+        <div class="col-12 mb-3">
+            <div class="loan-card d-flex align-items-center">
+                <div class="col-4 col-md-2">
+                    <div class="card book-card">
+                        <img src="images/hobbit.png" class="card-img-top img-fluid" alt="The Hobbit">
+                        <div class="card-body text-center">
+                            <h6 class="card-title">The Hobbit</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="rating-info ms-3">
+                    <p><strong>Rating:</strong>
+                        <span class="text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span> (4.5/5)
+                    </p>
+                    <p><strong>Comment:</strong> "An amazing journey, timeless classic!"</p>
+                </div>
             </div>
-
-        <!-- Book List -->
-            <ul class="list-unstyled mx-5">
-                <li class="media mb-4 custom">
-                    <img src="images/a_game_of_thrones.jpeg" class="mr-3" alt="A Game of Thrones">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">A Game of Thrones</h5>
-                        <p class="media-body mt-3 custom-body">George R. R. Martin</p>
-                        <div class="stars mt-3">★★★★★</div>
-                    </div>
-                </li>
-
-                <li class="media mb-4 custom">
-                    <img src="images/the_hobbit.jpeg" class="mr-3" alt="The Hobbit">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">The Hobbit</h5>
-                        <p class="media-body mt-3 custom-body">J.R.R. Tolkien</p>
-                        <div class="stars mt-3">★★★★☆</div>
-                    </div>
-                </li>
-                <li class="media mb-4 custom">
-                    <img src="images/catching_fire.jpg" class="mr-3" alt="Catching Fire">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">Catching Fire</h5>
-                        <p class="media-body mt-3 custom-body">Suzanne Collins</p>
-                        <div class="stars mt-3">★★★★☆</div>
-                    </div>
-                </li>
-                <li class="media mb-4 custom">
-                    <img src="images/frankenstein.jpeg" class="mr-3" alt="Frankenstein">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">Frankenstein</h5>
-                        <p class="media-body mt-3 custom-body"> Mary Shelley</p>
-                        <div class="stars mt-3 mb">★★★☆☆</div>
-                    </div>
-                </li>
-            </ul>
-
-        <div class="footer">
-            <a href="#"><span class="material-icons">home</span></a>
-            <a href="#"><span class="material-icons">search</span></a>
-            <a href="#"><span class="material-icons">star</span></a>
-            <a href="#"><span class="material-icons">shopping_cart</span></a>
-            <a href="#"><span class="material-icons">person</span></a>
         </div>
-    
-        <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Rating Card 2 -->
+        <div class="col-12 mb-3">
+            <div class="loan-card d-flex align-items-center">
+                <div class="col-4 col-md-2">
+                    <div class="card book-card">
+                        <img src="images/got.png" class="card-img-top img-fluid" alt="Game of Thrones">
+                        <div class="card-body text-center">
+                            <h6 class="card-title">Game of Thrones</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="rating-info ms-3">
+                    <p><strong>Rating:</strong>
+                        <span class="text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </span> (5/5)
+                    </p>
+                    <p><strong>Comment:</strong> "Incredible world-building and plot twists!"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Rating Cards can be added here -->
+
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 </html>
 
